@@ -7,7 +7,7 @@ import Modal from "react-modal";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../utils/axiosInstance";
 import Toast from "../../components/ToastMessages/Toast";
-import imgSrc from "../../assets/react.svg";
+import { GrDocumentMissing } from "react-icons/gr";
 import EmptyCard from "../../components/EmptyCard/EmptyCard";
 
 const Home = () => {
@@ -170,7 +170,6 @@ console.log("Error while pinning",error)
           </div>
         ) : (
           <EmptyCard
-            imgSrc={imgSrc}
             message={`Start creating your first note! Click 'ADD' button to join creating new notes `}
           />
         )}

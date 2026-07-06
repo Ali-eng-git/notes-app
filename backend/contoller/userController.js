@@ -264,7 +264,6 @@ const getUser = async (req, res) => {
 const searchNotes = async(req,res)=>{
    const user = req.user;
    const {query} = req.body;
-   console.log(query)
    if(!query){
     return res.status(400).json({
       error:true,
