@@ -1,0 +1,15 @@
+services:
+  backend:
+    build: .
+    image: notes-app
+    container_name: notes-app-container
+
+    ports:
+      - "9000:9000"
+
+    environment:
+      PORT: 9000
+      MONGO_URL: ${MONGO_URL}
+      JWT_SECRET: ${JWT_SECRET}
+
+    restart: unless-stopped

@@ -1,26 +1,30 @@
 # 📝 MERN Notes App
 
-A full-stack Notes Management Application built with the MERN Stack (MongoDB, Express.js, React.js, and Node.js). The application allows users to securely create, manage, search, update, pin, and delete personal notes.
+A full-stack Notes Management application built with the **MERN Stack** (MongoDB, Express.js, React.js, and Node.js).
 
-## 🚀 Features
-
-* 🔐 User Authentication (Sign Up & Login)
-* 🔑 JWT-based Authorization
-* 📝 Create New Notes
-* ✏️ Edit Existing Notes
-* 🗑️ Delete Notes
-* 📌 Pin/Unpin Important Notes
-* 🔍 Search Notes
-* 🔒 Protected Routes
-* 💾 Persistent Login Sessions
-* 📱 Responsive User Interface
-* 🔔 Toast Notifications for User Actions
+Users can securely register, log in, and manage personal notes with features like searching, pinning, updating, and deleting notes. The frontend is built with React and served as a production build by the Express backend, making the application deployable as a single Docker container.
 
 ---
 
-## 🛠️ Tech Stack
+# 🚀 Features
 
-### Frontend
+* 🔐 User Authentication (Sign Up & Login)
+* 🔑 JWT Authentication & Authorization
+* 📝 Create Notes
+* ✏️ Update Notes
+* 🗑️ Delete Notes
+* 📌 Pin  Notes
+* 🔍 Search Notes
+* 🔒 Protected Routes
+* 💾 Persistent Login Sessions
+* 📱 Responsive Design
+* 🐳 Docker Support
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
 
 * React.js
 * React Router DOM
@@ -28,97 +32,134 @@ A full-stack Notes Management Application built with the MERN Stack (MongoDB, Ex
 * Axios
 * React Icons
 * React Modal
+* Vite
 
-### Backend
+## Backend
 
 * Node.js
 * Express.js
-* MongoDB
+* MongoDB Atlas
 * Mongoose
-* JSON Web Tokens (JWT)
-* bcrypt.js
+* JWT
+* bcrypt
+* Helmet
+* Morgan
+
+## DevOps
+
+* Docker
+* Docker Compose
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
-```bash
+```text
 notes-app/
-├── frontend/
-│   ├── src/
-│   └── public/
+│
+├── frontend/                 # React source code
 │
 ├── backend/
-│   ├── controller/
+│   ├── controllers/
 │   ├── middleware/
 │   ├── models/
 │   ├── routes/
+│   ├── public/               # Production React build
+│   ├── Dockerfile
+│   ├── docker-compose.yml
+│   ├── .dockerignore
 │   └── index.js
+│
+├── screenshots/
 │
 └── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Environment Variables
 
-### Clone the Repository
+Create a `.env` file inside the **backend** directory.
 
-```bash
-git clone https://github.com/yourusername/mern-notes-app.git
-cd mern-notes-app
+```env
+PORT=9000
+
+MONGO_URL=your_mongodb_connection_string
+
+JWT_SECRET=your_secret
 ```
 
-### Install Frontend Dependencies
+---
+
+# 💻 Running Locally
+
+## Clone the repository
+
+```bash
+git clone https://github.com/Ali-eng-git/notes-app.git
+
+cd notes-app
+```
+
+## Install frontend dependencies
 
 ```bash
 cd frontend
 npm install
 ```
 
-### Install Backend Dependencies
+## Build the React application
+
+```bash
+npm run build
+```
+
+Copy the generated `dist` folder into the backend as `backend/public`.
+
+## Install backend dependencies
 
 ```bash
 cd ../backend
 npm install
 ```
 
----
+## Start the backend
 
-## 🔧 Environment Variables
+```bash
+npm start
+```
 
-Create a `.env` file inside the backend folder and add:
+The application will be available at:
 
-```env
-PORT=8000
-MONGO_URI=your_mongodb_connection_string
-ACCESS_TOKEN_SECRET=your_secret_key
+```text
+http://localhost:9000
 ```
 
 ---
 
-## ▶️ Running the Application
+# 🐳 Running with Docker
 
-### Start Backend
+Navigate to the backend directory.
 
 ```bash
 cd backend
-npm run dev
 ```
 
-### Start Frontend
+Build and start the container.
 
 ```bash
-cd frontend
-npm run dev
+docker compose up --build
 ```
 
-The application will run on:
+Once the container starts successfully, open:
 
-* Frontend: `http://localhost:5173`
-* Backend: `http://localhost:8000`
+```text
+http://localhost:9000
+```
 
 ---
+
+# 📸 Screenshots
 
 ## 📸 Screenshots
 
@@ -157,34 +198,30 @@ The application will run on:
 
 ---
 
-## 🔮 Future Enhancements
 
-* Dark Mode
-* Archive Notes
-* Rich Text Editor
-* Note Categories
-* File Attachments
-* User Profile Management
+# 📌 Planned Improvements
 
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome.
-
-Feel free to fork this repository and submit a pull request.
+* Multi-stage Docker build
+* Automatic React production build during Docker image creation
+* CI/CD pipeline
+* Production deployment
+* HTTPS support
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Ali Hassan**
 
-* GitHub: https://github.com/Ali-eng-git
+GitHub: https://github.com/Ali-eng-git
+
+Portfolio: https://portfolio-orcin-sigma-y7a31h3rig.vercel.app/
+
 
 
 ---
 
-## ⭐ Show Your Support
+# ⭐ Support
 
-If you found this project helpful, please consider giving it a ⭐ on GitHub.
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
