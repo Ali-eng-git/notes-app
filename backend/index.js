@@ -35,5 +35,5 @@ mongoose
     });
   })
   .catch((e) => {
-    console.log(`Error connecting with Mongo D`, e);
+    console.log(`Error connecting with Mongo DB`, e);
   });

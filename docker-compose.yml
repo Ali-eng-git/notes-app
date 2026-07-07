@@ -7,9 +7,7 @@ services:
     ports:
       - "9000:9000"
 
-    environment:
-      PORT: 9000
-      MONGO_URL: ${MONGO_URL}
-      JWT_SECRET: ${JWT_SECRET}
+    env_file:
+      - backend/.env
 
     restart: unless-stopped
